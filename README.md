@@ -88,8 +88,8 @@ The image contains a bright solar disk surrounded by a large dark background. Co
 
 $$
 I_{\mathrm{norm}} =
-\frac{I-\operatorname{median}(I_{\mathrm{disk}})}
-{\operatorname{MAD}(I_{\mathrm{disk}})+10^{-6}}.
+\frac{I-\mathrm{median}(I_{\mathrm{disk}})}
+{\mathrm{MAD}(I_{\mathrm{disk}})+10^{-6}}
 $$
 
 **Rationale.** Median and MAD are robust to extreme pixel values. Restricting their calculation to the solar disk prevents the surrounding background from dominating the intensity statistics and provides a more consistent input scale.
