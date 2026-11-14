@@ -168,11 +168,15 @@ The validation partition contains 1,593 ground-truth filament instances. It was 
 Evaluation uses strict one-to-one matching. A predicted instance and a ground-truth instance are eligible to match only when their intersection over union (IoU) is greater than 0.5. Hungarian assignment maximizes the number of eligible matches and then the total matched IoU.
 
 $$
-\mathrm{PQ} =
-\frac{\sum_{(p,g)\in TP}\mathrm{IoU}(p,g)}
-{|TP|+\frac{1}{2}|FP|+\frac{1}{2}|FN|}
+\mathrm{PQ}
 =
-\mathrm{SQ}\times\mathrm{RQ}.
+\frac{
+\sum_{(p,g)\in TP}\mathrm{IoU}(p,g)
+}{
+|TP|+\frac{1}{2}|FP|+\frac{1}{2}|FN|
+}
+=
+\mathrm{SQ}\times\mathrm{RQ}
 $$
 
 Here, SQ measures segmentation quality and RQ measures recognition quality. PQ therefore penalizes inaccurate boundaries as well as missed and spurious instances. Candidate selection and overlap handling are consequently important in addition to pixel-level segmentation accuracy.
